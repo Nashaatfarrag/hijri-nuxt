@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.9.1",
+    "moment-hijri": "^2.1.2",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
