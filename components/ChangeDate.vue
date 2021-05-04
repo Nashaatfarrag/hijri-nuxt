@@ -94,6 +94,19 @@ export default {
     this.hijriDate = moment().format("iYYYY/iM/iD");
     this.gregDate = moment().format("ll");
   },
+    head() {
+    return {
+      title: 'هجري | تاريخ اليوم هجري | تحويل التاريخ الميلادي ',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
+    }
+  },
   watch: {
     selectedComponent(value) {
       if (value === 1) this.dateType = "greg";
