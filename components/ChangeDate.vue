@@ -1,7 +1,7 @@
 <template>
-  <v-container style="padding:5%">
+  <v-container style="padding: 5%">
     <v-row justify="center">
-      <v-col style="display:grid;">
+      <v-col style="display: grid">
         <v-chip-group
           class="mx-auto"
           v-model="selectedComponent"
@@ -48,7 +48,7 @@
           </v-col>
         </v-row>
         <v-row v-if="currentDate">
-          <v-col> {{ currentDate.format("iDD iMMMM iYYYY") }}</v-col>
+          <v-col> {{ currentDate.format('iDD iMMMM iYYYY') }}</v-col>
         </v-row>
       </v-col>
       <v-col cols="12" class="date text-center" v-else>
@@ -77,7 +77,7 @@
           </v-col>
         </v-row>
         <v-row v-if="currentDate">
-          <v-col> {{ currentDate.format("ll") }}</v-col>
+          <v-col> {{ currentDate.format('ll') }}</v-col>
         </v-row></v-col
       >
     </v-row>
@@ -85,110 +85,112 @@
 </template>
 
 <script>
-let moment = require("moment-hijri");
-import { ArabicMonths, ArabicGregMonths } from "./script";
+let moment = require('moment-hijri')
+import { ArabicMonths, ArabicGregMonths } from './script'
 
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   mounted() {
-    this.hijriDate = moment().format("iYYYY/iM/iD");
-    this.gregDate = moment().format("ll");
+    this.hijriDate = moment().format('iYYYY/iM/iD')
+    this.gregDate = moment().format('ll')
   },
-    head() {
+  head() {
     return {
-      title: 'هجري | تاريخ اليوم هجري | تحويل التاريخ الميلادي ',
+      title: `
+تحويل التاريخ | تحويل التاريخ من هجري الى ميلادي | تحويل التاريخ من ميلادي الى هجري | تاريخ اليوم في السعودية
+ `,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
           hid: 'description',
           name: 'description',
-          content: 'My custom description',
+          content: `منصة هجري السعودية تقوم بـ تحويل التاريخ من هجري لميلادي  و تحويل التاريخ من ميلادي الى هجري و تحويل من هجري لميلادي و التاريخ ميلادي و كذلك التاريخ الميلادي والهجري اليوم`,
         },
       ],
     }
   },
   watch: {
     selectedComponent(value) {
-      if (value === 1) this.dateType = "greg";
-      else this.dateType = "hijri";
+      if (value === 1) this.dateType = 'greg'
+      else this.dateType = 'hijri'
     },
   },
   computed: {
     currentDate() {
       if (this.selectedYear && this.selectedMonth && this.selectedYear) {
-        if (this.dateType === "hijri")
+        if (this.dateType === 'hijri')
           return moment(
             this.selectedDay +
-              " " +
+              ' ' +
               this.selectedMonth +
-              " " +
+              ' ' +
               this.selectedYear,
-            "iDD iMM iYYYY"
-          );
+            'iDD iMM iYYYY'
+          )
         else {
           return moment(
             this.selectedDay +
-              " " +
+              ' ' +
               this.selectedMonth +
-              " " +
+              ' ' +
               this.selectedYear,
-            "DD MM YYYY"
-          );
+            'DD MM YYYY'
+          )
         }
-      } else return null;
+      } else return null
     },
     date() {
       return (
-        this.selectedYear + "-" + this.selectedMonth + "-" + this.selectedDay
-      );
+        this.selectedYear + '-' + this.selectedMonth + '-' + this.selectedDay
+      )
     },
     days() {
-      let arr = [];
-      if (this.dateType === "hijri") {
+      let arr = []
+      if (this.dateType === 'hijri') {
         for (let i = 1; i <= 30; i++) {
-          arr.push(i);
+          arr.push(i)
         }
       } else {
         for (let i = 1; i <= 31; i++) {
-          arr.push(i);
+          arr.push(i)
         }
       }
-      return arr;
+      return arr
     },
     months() {
-      return this.dateType === "hijri" ? ArabicMonths() : ArabicGregMonths();
+      return this.dateType === 'hijri' ? ArabicMonths() : ArabicGregMonths()
     },
 
     years() {
-      let arr = [];
-      if (this.dateType === "hijri") {
+      let arr = []
+      if (this.dateType === 'hijri') {
         for (let i = 1442; i >= 0; i--) {
-          arr.push(i);
+          arr.push(i)
         }
       } else {
         for (let i = 2021; i >= 1500; i--) {
-          arr.push(i);
+          arr.push(i)
         }
       }
-      return arr;
+      return arr
     },
   },
   data: () => ({
-    ggg: "ggg",
-    selectedYear: "",
-    selectedMonth: "",
-    selectedDay: "",
+    ggg: 'ggg',
+    selectedYear: '',
+    selectedMonth: '',
+    selectedDay: '',
     selectedComponent: 2,
-    hijriDate: "",
-    gregDate: "",
-    dateType: "hijri",
+    hijriDate: '',
+    gregDate: '',
+    dateType: 'hijri',
     tags: [
-      "تاريخ اليوم",
-      "تحويل التاريخ من ميلادي إلي هجري ",
-      "تحويل التاريخ من هجري إلي ميلادي   ",
+      'تاريخ اليوم',
+      'تحويل التاريخ من ميلادي إلي هجري ',
+      'تحويل التاريخ من هجري إلي ميلادي   ',
     ],
   }),
-};
+}
 </script>
 
 <style>
