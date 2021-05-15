@@ -2,7 +2,10 @@
   <v-app>
     <v-app-bar dark fixed app>
       <v-toolbar-title  />
+      <h2>
       هجري .كوم
+
+      </h2>
       <v-spacer />
       <v-toolbar-title>Hijri.com</v-toolbar-title>
     </v-app-bar>
