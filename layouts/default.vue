@@ -7,7 +7,7 @@
 
       </h2>
       <v-spacer />
-      <v-toolbar-title>Hijri.com</v-toolbar-title>
+      <v-toolbar-title>Hijre.com</v-toolbar-title>
     </v-app-bar>
     <v-main>
       <v-container>
