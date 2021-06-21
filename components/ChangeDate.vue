@@ -14,15 +14,17 @@
         </v-chip-group>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col cols="12" class="date text-center" v-if="selectedComponent === 0">
+    <v-row style="">
+      <v-col cols="12" class="text-center" v-if="selectedComponent === 0">
+
+<div class="date">
         <!-- التحويل من هجري إلي ميلادي -->
-        <v-row>
+        <v-row > 
           <v-col>
-            <h4>التحويل من هجري إلي ميلادي</h4>
+            <h5>التحويل من هجري إلي ميلادي</h5>
           </v-col>
         </v-row>
-        <v-row justify="center">
+        <v-row  justify="center">
           <v-col cols="4" md="2">
             <v-autocomplete
               v-model="selectedDay"
@@ -46,21 +48,24 @@
             ></v-autocomplete>
           </v-col>
         </v-row>
-        <v-row v-if="currentDate">
+        <v-row  v-if="currentDate">
           <v-col>
             <Copy :text="currentDate.format('ll')" />
           </v-col>
         </v-row>
 
-        <v-divider></v-divider>
+</div>
+        
         <v-spacer></v-spacer>
         <!-- التحويل من ميلادي إلي هجري -->
-        <v-row>
+        <div class="date">
+
+        <v-row style="margin-top:50px">
           <v-col>
-            <h4>التحويل من ميلادي إلي هجري</h4>
+            <h5>التحويل من ميلادي إلي هجري</h5>
           </v-col>
         </v-row>
-        <v-row justify="center">
+        <v-row  justify="center">
           <v-col cols="4" md="2">
             <v-autocomplete
               v-model="selectedDay2"
@@ -89,6 +94,7 @@
             <Copy :text="currentDate2.format('iDD iMM iYYYY')" />
           </v-col>
         </v-row>
+        </div>
       </v-col>
       <v-col
         cols="12"
