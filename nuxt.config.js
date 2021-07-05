@@ -34,10 +34,12 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -61,6 +63,20 @@ export default {
           success: colors.green.accent3
         }
       }
+    }
+  },
+
+  googleFonts: {
+    download: true ,
+    families: {
+      Tajawal: true,
+      'Open+Sans': true,
+     
+      wght: [100, 400],
+      Raleway: {
+        wght: [100, 400],
+        ital: [100]
+      },
     }
   },
 

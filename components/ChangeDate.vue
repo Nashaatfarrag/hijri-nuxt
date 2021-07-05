@@ -16,90 +16,87 @@
     </v-row>
     <v-row style="">
       <v-col cols="12" class="text-center" v-if="selectedComponent === 0">
+        <div class="date">
+          <!-- التحويل من هجري إلي ميلادي -->
+          <v-row>
+            <v-col>
+              <h5>التحويل من هجري إلي ميلادي</h5>
+            </v-col>
+          </v-row>
+          <v-row justify="center">
+            <v-col cols="4" md="2">
+              <v-autocomplete
+                v-model="selectedDay"
+                :items="days"
+                label="إختر اليوم"
+              ></v-autocomplete>
+            </v-col>
+            <v-col cols="4" md="2">
+              <v-autocomplete
+                v-model="selectedMonth"
+                label="إختر الشهر"
+                :item-text="(item) => item.value + ' - ' + item.text"
+                :items="getMonthsMenu('hijri')"
+              ></v-autocomplete>
+            </v-col>
+            <v-col cols="4" md="2">
+              <v-autocomplete
+                v-model="selectedYear"
+                label="إختر العام"
+                :items="years"
+              ></v-autocomplete>
+            </v-col>
+          </v-row>
+          <v-row v-if="currentDate">
+            <v-col>
+              <Copy :text="currentDate.format('ll')" />
+            </v-col>
+          </v-row>
+        </div>
 
-<div class="date">
-        <!-- التحويل من هجري إلي ميلادي -->
-        <v-row > 
-          <v-col>
-            <h5>التحويل من هجري إلي ميلادي</h5>
-          </v-col>
-        </v-row>
-        <v-row  justify="center">
-          <v-col cols="4" md="2">
-            <v-autocomplete
-              v-model="selectedDay"
-              :items="days"
-              label="إختر اليوم"
-            ></v-autocomplete>
-          </v-col>
-          <v-col cols="4" md="2">
-            <v-autocomplete
-              v-model="selectedMonth"
-              label="إختر الشهر"
-              :item-text="(item) => item.value + ' - ' + item.text"
-              :items="getMonthsMenu('hijri')"
-            ></v-autocomplete>
-          </v-col>
-          <v-col cols="4" md="2">
-            <v-autocomplete
-              v-model="selectedYear"
-              label="إختر العام"
-              :items="years"
-            ></v-autocomplete>
-          </v-col>
-        </v-row>
-        <v-row  v-if="currentDate">
-          <v-col>
-            <Copy :text="currentDate.format('ll')" />
-          </v-col>
-        </v-row>
-
-</div>
-        
         <v-spacer></v-spacer>
         <!-- التحويل من ميلادي إلي هجري -->
         <div class="date">
-
-        <v-row style="margin-top:50px">
-          <v-col>
-            <h5>التحويل من ميلادي إلي هجري</h5>
-          </v-col>
-        </v-row>
-        <v-row  justify="center">
-          <v-col cols="4" md="2">
-            <v-autocomplete
-              v-model="selectedDay2"
-              :items="getDaysMenu()"
-              label="إختر اليوم"
-            ></v-autocomplete>
-          </v-col>
-          <v-col cols="4" md="2">
-            <v-autocomplete
-              v-model="selectedMonth2"
-              label="إختر الشهر"
-              :item-text="(item) => item.value + ' - ' + item.text"
-              :items="getMonthsMenu()"
-            ></v-autocomplete>
-          </v-col>
-          <v-col cols="4" md="2">
-            <v-autocomplete
-              v-model="selectedYear2"
-              label="إختر العام"
-              :items="getYeasMenu()"
-            ></v-autocomplete>
-          </v-col>
-        </v-row>
-        <v-row v-if="currentDate2">
-          <v-col>
-            <Copy :text="currentDate2.format('iDD iMM iYYYY')" />
-          </v-col>
-        </v-row>
+          <v-row style="margin-top: 50px">
+            <v-col>
+              <h5>التحويل من ميلادي إلي هجري</h5>
+            </v-col>
+          </v-row>
+          <v-row justify="center">
+            <v-col cols="4" md="2">
+              <v-autocomplete
+                v-model="selectedDay2"
+                :items="getDaysMenu()"
+                label="إختر اليوم"
+              ></v-autocomplete>
+            </v-col>
+            <v-col cols="4" md="2">
+              <v-autocomplete
+                v-model="selectedMonth2"
+                label="إختر الشهر"
+                :item-text="(item) => item.value + ' - ' + item.text"
+                :items="getMonthsMenu()"
+              ></v-autocomplete>
+            </v-col>
+            <v-col cols="4" md="2">
+              <v-autocomplete
+                v-model="selectedYear2"
+                label="إختر العام"
+                :items="getYeasMenu()"
+              ></v-autocomplete>
+            </v-col>
+          </v-row>
+          <v-row v-if="currentDate2">
+            <v-col>
+              <Copy :text="currentDate2.format('iDD iMM iYYYY')" />
+            </v-col>
+          </v-row>
         </div>
       </v-col>
       <v-col
         cols="12"
         class="date text-center"
-        v-else-if="selectedComponent === 1"
+        v-else-if="selectedComponent === 2"
       >
         <v-row justify="center">
           <v-col cols="4" md="2">
@@ -131,7 +128,7 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="12" class="date text-center" v-else>
+      <v-col cols="12" class="date text-center" v-else-if="selectedComponent === 1">
         <v-row justify="center">
           <v-col cols="4" md="2">
             <v-autocomplete
@@ -196,7 +193,7 @@ export default {
   },
   watch: {
     selectedComponent(value) {
-      if (value === 1) this.dateType = 'greg'
+      if (value === 2) this.dateType = 'greg'
       else this.dateType = 'hijri'
     },
   },
@@ -311,14 +308,14 @@ export default {
     selectedYear2: '',
     selectedMonth2: '',
     selectedDay2: '',
-    selectedComponent: 2,
+    selectedComponent: 1,
     hijriDate: '',
     gregDate: '',
     dateType: 'hijri',
     tags: [
-      'تاريخ اليوم',
-      'تحويل التاريخ من ميلادي إلي هجري ',
+      'تحويل التاريخ',
       'تحويل التاريخ من هجري إلي ميلادي   ',
+      'تحويل التاريخ من ميلادي إلي هجري ',
     ],
   }),
 }

@@ -15,8 +15,16 @@
       </v-container>
     </v-main>
 
-    <v-footer app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+        <v-footer app>
+      <v-row>
+        <v-col style="text-align:center">
+          للإتصال بنا:
+          <a href="mailto:Hijre@inboxeen.com">Hijre@inboxeen.com</a>
+
+          <br />
+          جميع الحقوق محفوظة - موقع هجري 2021 ©
+        </v-col>
+      </v-row>
     </v-footer>
   </v-app>
 </template>
@@ -30,3 +38,12 @@ export default {
   },
 }
 </script>
+<style>
+
+  * {
+  
+  font-family: "Tajawal", Open-Sans;
+  font-weight: 400;
+
+}
+</style>
