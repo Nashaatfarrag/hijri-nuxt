@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  target:   'static' ,
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - hijri',
@@ -53,8 +53,14 @@ export default {
     theme: {
 
       themes: {
+        light: {
+          primary: colors.brown.darken3,
+          secondary: colors.brown.darken3,
+          accent: colors.brown.darken3,
+          error: colors.brown.darken3,
+        },
         dark: {
-          primary: colors.blue.darken2,
+          primary: colors.brown.darken3,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
@@ -67,11 +73,11 @@ export default {
   },
 
   googleFonts: {
-    download: true ,
+    download: true,
     families: {
       Tajawal: true,
       'Open+Sans': true,
-     
+
       wght: [100, 400],
       Raleway: {
         wght: [100, 400],
