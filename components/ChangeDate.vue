@@ -128,7 +128,11 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="12" class="date text-center" v-else-if="selectedComponent === 1">
+      <v-col
+        cols="12"
+        class="date text-center"
+        v-else-if="selectedComponent === 1"
+      >
         <v-row justify="center">
           <v-col cols="4" md="2">
             <v-autocomplete
@@ -323,7 +327,7 @@ export default {
 
 <style>
 .date {
-  background-color: #eff3fd;
+  background-color: #f7f7f7;
   border-radius: 10px;
   font-size: 2rem;
 }
