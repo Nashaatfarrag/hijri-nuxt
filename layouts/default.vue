@@ -1,11 +1,8 @@
 <template>
   <v-app>
     <v-app-bar dark fixed app>
-      <v-toolbar-title  />
-      <h2>
-      هجري .كوم
-
-      </h2>
+      <v-toolbar-title />
+      <h2>هجري .كوم</h2>
       <v-spacer />
       <v-toolbar-title>Hijre.com</v-toolbar-title>
     </v-app-bar>
@@ -15,9 +12,13 @@
       </v-container>
     </v-main>
 
-        <v-footer app>
+    <v-footer app>
       <v-row>
-        <v-col style="text-align:center">
+        <v-col style="text-align: center">
+          الموقع برعاية :
+
+          <a href="https://wasetshera.com?myad=53198"> وسيط شراء من الإنترنت</a>
+          <br />
           للإتصال بنا:
           <a href="mailto:Hijre@inboxeen.com">Hijre@inboxeen.com</a>
 
@@ -32,18 +33,13 @@
 <script>
 export default {
   data() {
-    return {
-     
-    }
+    return {}
   },
 }
 </script>
 <style>
-
-  * {
-  
-  font-family: "Tajawal", Open-Sans;
+* {
+  font-family: 'Tajawal', Open-Sans;
   font-weight: 400;
-
 }
 </style>
