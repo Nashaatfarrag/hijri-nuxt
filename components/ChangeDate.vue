@@ -49,7 +49,8 @@
           </v-row>
           <v-row v-if="currentDate">
             <v-col>
-              <Copy :text="currentDate.format('ll')" />
+            <Copy :text="currentDate.format('YYYY/MM/DD')" />
+            <Copy :text="currentDate.format('DD MMMM YYYY ')" />
             </v-col>
           </v-row>
         </div>
@@ -88,7 +89,8 @@
           </v-row>
           <v-row v-if="currentDate2">
             <v-col>
-              <Copy :text="currentDate2.format('iDD iMM iYYYY')" />
+            <Copy :text="currentDate.format('iYYYY/iMM/iDD')" />
+            <Copy :text="currentDate.format('iDD iMMMM iYYYY')" />
             </v-col>
           </v-row>
         </div>
@@ -124,6 +126,7 @@
         </v-row>
         <v-row v-if="currentDate">
           <v-col>
+            <Copy :text="currentDate.format('iYYYY/iMM/iDD')" />
             <Copy :text="currentDate.format('iDD iMMMM iYYYY')" />
           </v-col>
         </v-row>
@@ -159,7 +162,8 @@
         </v-row>
         <v-row v-if="currentDate">
           <v-col>
-            <Copy :text="currentDate.format('ll')" />
+            <Copy :text="currentDate.format('YYYY/MM/DD')" />
+            <Copy :text="currentDate.format('DD MMMM YYYY ')" />
           </v-col> </v-row
       ></v-col>
     </v-row>
@@ -221,11 +225,11 @@ export default {
     getYeasMenu(dateType) {
       let arr = []
       if (dateType === 'hijri') {
-        for (let i = 1442; i >= 0; i--) {
+        for (let i = 1444; i >= 0; i--) {
           arr.push(i)
         }
       } else {
-        for (let i = 2021; i >= 1500; i--) {
+        for (let i = 2023; i >= 1700; i--) {
           arr.push(i)
         }
       }
@@ -293,11 +297,11 @@ export default {
     years() {
       let arr = []
       if (this.dateType === 'hijri') {
-        for (let i = 1442; i >= 0; i--) {
+        for (let i = 1444; i >= 0; i--) {
           arr.push(i)
         }
       } else {
-        for (let i = 2021; i >= 1500; i--) {
+        for (let i = 2023; i >= 1700; i--) {
           arr.push(i)
         }
       }
