@@ -16,6 +16,24 @@
   gtag('config', 'UA-208155997-26');
 </script>
 
+before the closing body tag:
+
+<script>
+function send_conversion(){
+ gtag('config', 'AW-955968979');
+// Event snippet for Hijre lead conversion page
+  gtag('event', 'conversion', {'send_to': 'AW-955968979/468HCODz6pQDENPb68cD'});
+}
+ 
+var elements = document.getElementsByClassName("v-chip--clickable");
+
+for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener('click',send_conversion, false);
+}
+
+</script>	
+
+
 
 # install dependencies
 $ npm install
