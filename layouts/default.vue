@@ -23,7 +23,7 @@
           <a href="mailto:Hijre@inboxeen.com">Hijre@inboxeen.com</a>
 
           <br />
-          جميع الحقوق محفوظة - موقع هجري 2021 ©
+          جميع الحقوق محفوظة - موقع هجري 2022 ©
         </v-col>
       </v-row>
     </v-footer>
