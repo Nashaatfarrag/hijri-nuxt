@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  hostname : "hire.com",
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -22,8 +23,22 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
+  sitemap: {
+    hostname: "https://hijre.com",
+  },
   googleAnalytics: {
-    id: 'UA-208155997-26'
+    id: 'UA-208155997-26',
+    config: {
+
+      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+    },
+    additionalAccounts: [{
+      id: 'AW-955968979', // required if you are adding additional accounts
+      config: {
+        send_page_view: false // optional configurations
+      }
+    }],
+
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -39,12 +54,13 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/google-fonts' ,
+    '@nuxtjs/google-fonts',
     '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/sitemap'
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
