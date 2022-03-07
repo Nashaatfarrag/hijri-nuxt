@@ -14,10 +14,10 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-208155997-26');
+  gtag('config', 'AW-955968979'); 
 </script>
 <script>
 function send_conversion(){
- gtag('config', 'AW-955968979');
 // Event snippet for Hijre lead conversion page
   gtag('event', 'conversion', {'send_to': 'AW-955968979/468HCODz6pQDENPb68cD'});
 }
