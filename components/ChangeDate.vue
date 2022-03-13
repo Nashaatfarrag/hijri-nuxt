@@ -207,9 +207,8 @@ export default {
   },
   methods: {
     hello() {
-      this.$ga.event('event', 'conversion', {
-        send_to: 'AW-955968979/468HCODz6pQDENPb68cD',
-      })
+      // ! enable this if you remove the script from nuxt head
+      // gtag("event", 'conversion', {'send_to': 'AW-955968979/468HCODz6pQDENPb68cD'}); 
     },
     getMonthsMenu(type) {
       return type === 'hijri' ? ArabicMonths() : ArabicGregMonths()

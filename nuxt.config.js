@@ -13,7 +13,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
+      { 'http-equiv': "content-language", content: "ar" }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -24,8 +25,8 @@ export default {
         src: "https://www.googletagmanager.com/gtag/js?id=UA-208155997-26",
         async: true,
       },
-    {
-      innerHTML: `  
+      {
+        innerHTML: `  
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -33,11 +34,11 @@ export default {
       gtag('config', 'UA-208155997-26');
       gtag('config', 'AW-955968979'); 
     `,
-      type: 'text/javascript',
-      charset: 'utf-8',
-    },
-    {
-      innerHTML: `  
+        type: 'text/javascript',
+        charset: 'utf-8',
+      },
+      {
+        innerHTML: `  
     function send_conversion(){
     // Event snippet for Hijre lead conversion page
       gtag("event", 'conversion', {'send_to': 'AW-955968979/468HCODz6pQDENPb68cD'});
@@ -48,9 +49,9 @@ export default {
         elements[i].addEventListener('click',send_conversion, false);
     }
     `,
-      type: 'text/javascript',
-      charset: 'utf-8',
-    }
+        type: 'text/javascript',
+        charset: 'utf-8',
+      }
     ],
   },
 
@@ -94,6 +95,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap'
   ],
 
