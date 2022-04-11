@@ -21,6 +21,7 @@
 
 <script>
 function send_conversion(){
+console.log('Conversion triggered');
 // Event snippet for Hijre lead conversion page
   gtag('event', 'conversion', {'send_to': 'AW-955968979/468HCODz6pQDENPb68cD'});
 }
