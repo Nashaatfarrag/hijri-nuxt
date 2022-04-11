@@ -24,8 +24,8 @@ function send_conversion(){
 // Event snippet for Hijre lead conversion page
   gtag('event', 'conversion', {'send_to': 'AW-955968979/468HCODz6pQDENPb68cD'});
 }
- 
-var elements = document.getElementsByClassName("v-chip--clickable");
+
+var elements = document.getElementsByClassName("v-chip__content");
 
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click',send_conversion, false);
