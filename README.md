@@ -16,6 +16,9 @@
   gtag('config', 'UA-208155997-26');
   gtag('config', 'AW-955968979'); 
 </script>
+
+#Important: place this right above the closing </body> tag
+
 <script>
 function send_conversion(){
 // Event snippet for Hijre lead conversion page
