@@ -38,9 +38,9 @@ export default {
 }
 </script>
 <style>
-* {
-  font-family: 'Tajawal', Open-Sans;
-  font-weight: 400;
+*{
+  font-family: "Graphik";
+  font-weight: 300;
 }
 .theme--dark.v-app-bar.v-toolbar.v-sheet {
 	background-color: #2e7d32 !important;
@@ -56,5 +56,10 @@ export default {
 }
 .v-application a {
 	color: #2e7d32 !important;
+}
+@media screen and (max-width: 900px){
+.v-btn--fab{
+left: 40px;
+}
 }
 </style>
