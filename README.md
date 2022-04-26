@@ -26,7 +26,7 @@ console.log('Conversion triggered');
   gtag('event', 'conversion', {'send_to': 'AW-955968979/468HCODz6pQDENPb68cD'});
 }
 
-var elements = document.getElementsByClassName("v-chip__content");
+var elements = document.getElementsByClassName("v-input__append-inner");
 
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click',send_conversion, false);
