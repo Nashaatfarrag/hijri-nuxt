@@ -26,7 +26,7 @@ function send_conversion(){
   console.log('Conversion triggered');
 }
 
-var elements = document.getElementsByClassName("v-btn--fab");
+var elements = document.getElementsByClassName("v-icon");
 
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click',send_conversion, false);
