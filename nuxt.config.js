@@ -19,40 +19,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    __dangerouslyDisableSanitizers: ['script'],
-    script: [
-      {
-        src: "https://www.googletagmanager.com/gtag/js?id=UA-208155997-26",
-        async: true,
-      },
-      {
-        innerHTML: `  
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'UA-208155997-26');
-      gtag('config', 'AW-955968979'); 
-    `,
-        type: 'text/javascript',
-        charset: 'utf-8',
-      },
-      {
-        innerHTML: `  
-    function send_conversion(){
-    // Event snippet for Hijre lead conversion page
-      gtag("event", 'conversion', {'send_to': 'AW-955968979/468HCODz6pQDENPb68cD'});
-    }
-    var elements = document.getElementsByClassName("v-chip--clickable");
-    
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].addEventListener('click',send_conversion, false);
-    }
-    `,
-        type: 'text/javascript',
-        charset: 'utf-8',
-      }
-    ],
+    __dangerouslyDisableSanitizers: ['script']
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -60,20 +27,6 @@ export default {
   ],
   sitemap: {
     hostname: "https://hijre.com",
-  },
-  googleAnalytics: {
-    id: 'UA-208155997-26',
-    config: {
-
-      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-    },
-    // additionalAccounts: [{
-    //   id: 'AW-955968979', // required if you are adding additional accounts
-    //   config: {
-    //     send_page_view: false // optional configurations
-    //   }
-    // }],
-
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
