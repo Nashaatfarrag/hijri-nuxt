@@ -26,7 +26,7 @@ function send_conversion(){
   console.log('Conversion triggered');
 }
 
-var elements = document.getElementsByClassName("v-input__append-inner");
+var elements = document.getElementsByClassName("v-btn--fab");
 
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click',send_conversion, false);
