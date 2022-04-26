@@ -1,7 +1,7 @@
 <template>
-  <v-container style="padding: 5%">
+  <v-container>
     <v-row justify="center">
-      <v-col style="display: grid">
+      <v-col style="display: none">
         <v-chip-group
           class="mx-auto"
           v-model="selectedComponent"
@@ -320,7 +320,7 @@ export default {
     selectedYear2: '',
     selectedMonth2: '',
     selectedDay2: '',
-    selectedComponent: 1,
+    selectedComponent: 0,
     hijriDate: '',
     gregDate: '',
     dateType: 'hijri',
@@ -335,8 +335,17 @@ export default {
 
 <style>
 .date {
-  background-color: #f7f7f7;
+  background-color: #e4fae4;
   border-radius: 10px;
   font-size: 2rem;
+}
+.container{
+padding: 3%;
+}
+@media screen and (max-width: 640px){
+.container{
+padding: 2%;
+margin-top: 20px;
+}
 }
 </style>
