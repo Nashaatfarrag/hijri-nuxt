@@ -42,4 +42,19 @@ export default {
   font-family: 'Tajawal', Open-Sans;
   font-weight: 400;
 }
+.theme--dark.v-app-bar.v-toolbar.v-sheet {
+	background-color: #2e7d32 !important;
+	border-color: #2e7d32 !important;
+}
+.v-toolbar__title {
+	font-size: 24px;
+	line-height: 1.5;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: bold;
+}
+.v-application a {
+	color: #2e7d32 !important;
+}
 </style>
