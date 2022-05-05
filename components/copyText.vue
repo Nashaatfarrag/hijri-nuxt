@@ -7,7 +7,7 @@
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-btn v-bind="attrs" v-on="on" icon fab>
-            <v-icon v-clipboard:copy="text"> mdi-content-copy </v-icon>
+            <v-icon @click="send_conversion" v-clipboard:copy="text"> mdi-content-copy </v-icon>
           </v-btn>
         </template>
         <span>إضغط هنا للنسخ</span>
@@ -21,7 +21,7 @@
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">
           <v-btn v-bind="attrs" v-on="on" icon fab>
-            <v-icon v-clipboard:copy="text"> mdi-content-copy </v-icon>
+            <v-icon @click="send_conversion" v-clipboard:copy="text"> mdi-content-copy </v-icon>
           </v-btn>
         </template>
         <span>إضغط هنا للنسخ</span>
@@ -42,6 +42,13 @@ export default {
       type: String,
     },
   },
+  methods: {
+     send_conversion() {
+	// Event snippet for Hijre lead conversion page
+  gtag('event', 'conversion', {'send_to': 'AW-955968979/468HCODz6pQDENPb68cD'}); 
+	  console.log('conversion sent.');
+    }
+	}
 };
 </script>
 <style lang="scss">
