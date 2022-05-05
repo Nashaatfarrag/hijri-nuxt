@@ -19,7 +19,25 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    __dangerouslyDisableSanitizers: ['script']
+    __dangerouslyDisableSanitizers: ['script'],
+script: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=UA-208155997-26",
+        async: true,
+      },
+      {
+        innerHTML: `  
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-208155997-26');
+      gtag('config', 'AW-955968979'); 
+    `,
+        type: 'text/javascript',
+        charset: 'utf-8',
+      }
+    ]	
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
