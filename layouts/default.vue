@@ -15,9 +15,8 @@
     <v-footer app>
       <v-row>
         <v-col style="text-align: center">
-          الموقع برعاية :
-
-          <a href="https://wasetshera.com?myad=53198"> وسيط شراء من الإنترنت</a>
+   <span class="effra-font">برعاية لطيفة من الرائعين في: <a class="effra-font" href="https://wasetshera.com/?myad=53198" >وسيط شراء</a> و <a class="effra-font" href="https://knaree.com/" >كناري</a> و <a class="effra-font" href="https://rmmmz.com/" >رمز</a></span>	
+		
           <br />
           للإتصال بنا:
           <a href="mailto:Hijre@inboxeen.com">Hijre@inboxeen.com</a>
