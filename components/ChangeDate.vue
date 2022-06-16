@@ -49,8 +49,8 @@
           </v-row>
           <v-row v-if="currentDate">
             <v-col>
-              <Copy :text="currentDate.format('YYYY/MM/DD')" />
-              <Copy :text="currentDate.format('DD MMMM YYYY ')" />
+              <Copy :text="currentDate.format('YYYY/MM/DD')+' م'" />
+              <Copy :text="currentDate.format('DD MMMM YYYY ')+' م'" />
             </v-col>
           </v-row>
         </div>
@@ -89,8 +89,8 @@
           </v-row>
           <v-row v-if="currentDate2">
             <v-col>
-              <Copy :text="currentDate.format('iYYYY/iMM/iDD')" />
-              <Copy :text="currentDate.format('iDD iMMMM iYYYY')" />
+              <Copy :text="currentDate.format('iYYYY/iMM/iDD')+' هـ'" />
+              <Copy :text="currentDate.format('iDD iMMMM iYYYY')+' هـ'" />
             </v-col>
           </v-row>
         </div>
